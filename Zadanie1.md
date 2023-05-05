@@ -79,7 +79,13 @@ class Reviewer(Mentor):
         result = f'Имя: {self.name}\nФамилия: {self.surname}'
         return result
 
+def average_grade_student(list_student, course):
+   res = sum([sum(student.grades[course]) for student in list_student]) / sum([len(student.grades[course]) for student in list_student])
+   print(res)
 
+def average_grade_lecturer(list_lecturer, course):
+   res = sum([sum(lecturer.grades[course]) for lecturer in list_lecturer]) / sum([len(lecturer.grades[course]) for lecturer in list_lecturer])
+   print(res)
 
 
 
@@ -140,5 +146,6 @@ print()
 print(student_2)
 print()
 
-
+average_grade_student([student_1, student_2], 'Python')
 print()
+average_grade_lecturer([lecturer_1, lecturer_2], 'Python')
