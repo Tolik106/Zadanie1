@@ -4,7 +4,7 @@ class Student:
         self.surname = surname
         self.gender = gender
         self.finished_courses = []
-        self.courses_1in_progress = []
+        self.courses_in_progress = []
         self.grades = {}
 
     def add_courses(self, course_name):
@@ -81,13 +81,7 @@ class Reviewer(Mentor):
 
 
 
-def average_grade_student(list_student, course):
-   res = sum([sum(student.grades[course]) for student in list_student]) / sum([len(student.grades[course]) for student in list_student])
-   print(res)
 
-def average_grade_lecturer(list_lecturer, course):
-   res = sum([sum(lecturer.grades[course]) for lecturer in list_lecturer]) / sum([len(lecturer.grades[course]) for lecturer in list_lecturer])
-   print(res)
 
 
 reviewer_1 = Reviewer('Irina', 'Smirnova')
@@ -147,6 +141,4 @@ print(student_2)
 print()
 
 
-print(average_grade_student([student_1, student_2], 'Python'))
 print()
-print(average_grade_lecturer([lecturer_1, lecturer_2], 'Python'))
